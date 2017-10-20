@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Cat.h"
 
 @interface CatDetailViewController : UIViewController
+@property (nonatomic) Cat *cat;
 @property (weak, nonatomic) IBOutlet UILabel *catDetailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *catDetailImage;
 
