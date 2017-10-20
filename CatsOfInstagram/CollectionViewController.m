@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "CatCollectionViewCell.h"
 #import "Cat.h"
+#import "CatDetailViewController.h"
 
 @interface CollectionViewController ()
 
@@ -56,6 +57,15 @@
     return cell;
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"catDetailView"]) {
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        Cat *cat = self.allCats[indexPath.item];
+        CatDetailViewController *controller = (CatDetailViewController *)[segue destinationViewController];
+        [controller setCat:cat];
+    } else {
+        NSLog(@"Oops... something went wrong");
+    }
+}
 
 @end
