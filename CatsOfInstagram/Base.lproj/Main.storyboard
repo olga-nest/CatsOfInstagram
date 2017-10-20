@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Cats of Instagram-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CollectionViewController" sceneMemberID="viewController">
@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zx6-cn-xAl">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zx6-cn-xAl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ur1-1y-beX">
                                     <size key="itemSize" width="180" height="180"/>
@@ -35,24 +34,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="phg-c5-PHU">
-                                                    <rect key="frame" x="-137" y="-39" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="phg-c5-PHU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                        <constraints>
+                                            <constraint firstItem="phg-c5-PHU" firstAttribute="centerY" secondItem="dWG-Wz-Qq8" secondAttribute="centerY" id="OTH-wX-sjt"/>
+                                            <constraint firstItem="phg-c5-PHU" firstAttribute="centerX" secondItem="dWG-Wz-Qq8" secondAttribute="centerX" id="Q4h-Uo-Qia"/>
+                                            <constraint firstItem="phg-c5-PHU" firstAttribute="leading" secondItem="dWG-Wz-Qq8" secondAttribute="leading" id="Qpo-DK-v6R"/>
+                                            <constraint firstItem="phg-c5-PHU" firstAttribute="top" secondItem="dWG-Wz-Qq8" secondAttribute="top" id="W0J-f7-WKr"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="catImageView" destination="phg-c5-PHU" id="uj4-NB-QCY"/>
+                                            <segue destination="udB-GI-Zrs" kind="show" identifier="catDetailView" id="t6e-jR-mMt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zx6-cn-xAl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2l7-ip-g1J"/>
+                            <constraint firstItem="Zx6-cn-xAl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LIc-9H-Lma"/>
+                            <constraint firstItem="Zx6-cn-xAl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QwC-sy-OV1"/>
+                            <constraint firstItem="Zx6-cn-xAl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dfz-ec-CXg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VAo-SW-POK"/>
+                    <navigationItem key="navigationItem" title="Cats of Instagram" id="Nv9-RA-sMd"/>
                     <connections>
                         <outlet property="collectionView" destination="Zx6-cn-xAl" id="0tf-zk-Aqp"/>
                     </connections>
@@ -60,6 +71,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="475.36231884057975" y="132.88043478260872"/>
+        </scene>
+        <!--Cat Detail View Controller-->
+        <scene sceneID="4cH-Rl-bHz">
+            <objects>
+                <viewController id="udB-GI-Zrs" customClass="CatDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NR3-SA-rhW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-NQ-4RH">
+                                <rect key="frame" x="20" y="68" width="374" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-Td-g2h">
+                                <rect key="frame" x="20" y="466" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="F0e-YQ-cJo"/>
+                    </view>
+                    <connections>
+                        <outlet property="catDetailImage" destination="dwo-NQ-4RH" id="ICR-mE-9we"/>
+                        <outlet property="catDetailLabel" destination="pyz-Td-g2h" id="KKT-MG-3IX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wQw-22-gjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282.608695652174" y="133.69565217391306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k4j-rB-KTy">
