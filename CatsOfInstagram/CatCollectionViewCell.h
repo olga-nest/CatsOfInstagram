@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CatCollectionViewCell.h
 //  CatsOfInstagram
 //
 //  Created by Olga on 10/19/17.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CatCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *catImageView;
 
 @end
-
