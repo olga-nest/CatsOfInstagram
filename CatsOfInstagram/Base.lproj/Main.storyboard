@@ -80,19 +80,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-NQ-4RH">
-                                <rect key="frame" x="20" y="68" width="374" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-NQ-4RH">
+                                <rect key="frame" x="20" y="88" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="VYp-7r-qmt"/>
+                                    <constraint firstAttribute="width" constant="374" id="cQG-FV-rRa"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-Td-g2h">
-                                <rect key="frame" x="20" y="466" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-Td-g2h">
+                                <rect key="frame" x="179.66666666666666" y="482" width="54.666666666666657" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dwo-NQ-4RH" firstAttribute="centerX" secondItem="F0e-YQ-cJo" secondAttribute="centerX" id="3RX-yH-fbl"/>
+                            <constraint firstItem="pyz-Td-g2h" firstAttribute="centerX" secondItem="F0e-YQ-cJo" secondAttribute="centerX" id="aPK-ZJ-b29"/>
+                            <constraint firstItem="dwo-NQ-4RH" firstAttribute="top" secondItem="F0e-YQ-cJo" secondAttribute="top" constant="24" id="uh5-a2-FCq"/>
+                            <constraint firstItem="pyz-Td-g2h" firstAttribute="top" secondItem="dwo-NQ-4RH" secondAttribute="bottom" constant="20" id="zXJ-3I-7GG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F0e-YQ-cJo"/>
                     </view>
                     <connections>
