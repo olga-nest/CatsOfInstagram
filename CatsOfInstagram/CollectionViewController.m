@@ -11,13 +11,17 @@
 
 @interface CollectionViewController ()
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) UICollectionViewFlowLayout *defaultLayout;
+
 @end
 
 @implementation CollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
 }
 
 
@@ -32,6 +36,7 @@
     
     return cell;
 }
+
 
 
 @end
