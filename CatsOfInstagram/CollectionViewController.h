@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CatCollectionViewCell.h"
 
 @interface CollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
