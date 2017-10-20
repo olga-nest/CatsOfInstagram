@@ -10,4 +10,15 @@
 
 @implementation Cat
 
+- (instancetype)initWithName: (NSString *)catName andImage: (UIImage *) image;
+{
+    self = [super init];
+    if (self) {
+        _catName = catName;
+        _catImage = image;
+        
+    }
+    return self;
+}
+
 @end

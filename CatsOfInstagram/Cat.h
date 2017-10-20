@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Cat : NSObject
+
+@property (nonatomic) NSString *catName;
+@property (nonatomic) UIImage *catImage;
+@property (nonatomic) NSString *catImageName;
+
+- (instancetype)initWithName: (NSString *)catName andImage: (UIImage *) image;
 
 @end
